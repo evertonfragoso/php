@@ -18,7 +18,7 @@ function image {
 #  --name string => Assign a name to the container
 function start {
   echo "Starting `container`"
-  docker run -d -i -t -p 80:80 -v ${PWD}/app:/app --name `container` `image`
+  docker run -d -i -t -p 80:80 -v ${PWD}:/app --name `container` `image`
 }
 
 function stop {
