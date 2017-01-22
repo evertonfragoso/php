@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function container {
+  echo 'store'
+}
+function image {
+  echo 'php-server'
+}
+
+# Start Docker container
+#  command: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+#  actions:
+#  -d, --detach => Run container in background and print container ID
+#  -i, --interactive => Keep STDIN open even if not attached
+#  -t, --tty => Allocate a pseudo-TTY
+#  -p, --publish list => Publish a container's port(s) to the host (default [])
+#  -v, --volume list => Bind mount a volume (default [])
+#  --name string => Assign a name to the container
+function start {
+  echo "Starting `container`"
+  docker run -d -i -t -p 80:80 -v ${PWD}/app:/app --name `container` `image`
+}
+
+function stop {
+  echo "Stoping `container`"
+  docker stop `container`
+  docker rm `container`
+}
+
+case $1 in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    stop
+    start
+    ;;
+  *)
+    echo "`basename ${0}`: usage: server [ start | stop | restart ]"
+    exit 1
+    ;;
+esac
