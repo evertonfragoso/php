@@ -1,3 +1,5 @@
+PHP 7.1 docker container with apache and PostgreSQL support
+
 ## Requirements
 
 ### [Docker](https://www.docker.com/products/overview)
@@ -17,10 +19,12 @@
 3. Build the container
   ```bash
   $ cd php
-  $ docker build -t php-server .
+  $ ./docker_container build
   ```
 
 This may take several minutes depending on your internet connection and computer configuration.
+
+*Note: if errors occur, refer to [#troubleshooting](#troubleshooting) session
 
 ## Running
 
@@ -30,14 +34,15 @@ $ ./docker_container start
   ```
 
 Available commands for `docker_container`:
-  - `$ ./docker_container start`
-  - `$ ./docker_container stop`
-  - `$ ./docker_container restart`
-  - `$ ./docker_container attach`
+```
+- `start`   # starts the container
+- `stop`    # stops the container
+- `restart` # stops and start the container. If no container found, it just starts
+- `build`   # builds the container
+- `attach`  # attaches to the started container using `bash`
+```
 
-`docker_container attach` attaches to the container using `bash`
-
-### Troubleshooting
+## Troubleshooting
 
 In case the command `docker_container` return error when called, check it's permissions, it must be executable.
 If it's not, run the following command:
