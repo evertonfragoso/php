@@ -1,4 +1,4 @@
-FROM php:5-apache
+FROM php:7.1-apache
 
 RUN apt-get -y update && apt-get -y install libghc-postgresql-libpq-dev \
   && docker-php-ext-configure pgsql -with-pgsql=/usr/include/postgresql/ \
