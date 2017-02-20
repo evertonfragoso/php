@@ -16,6 +16,7 @@
 
 3. Build the container
   ```bash
+  $ cd php
   $ docker build -t php-server .
   ```
 
@@ -25,7 +26,6 @@ This may take several minutes depending on your internet connection and computer
 
 Run `docker_container` from the project root
 ```bash
-$ cd php
 $ ./docker_container start
   ```
 
