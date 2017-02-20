@@ -27,6 +27,11 @@ function stop {
   docker rm `container`
 }
 
+function build {
+  echo "Building `container`"
+  docker build -t `image` .
+}
+
 function attach {
   echo "Attaching `container`"
   docker exec -i -t `container` /bin/bash
@@ -43,11 +48,14 @@ case $1 in
     stop
     start
     ;;
+  build)
+    build
+    ;;
   attach)
     attach
     ;;
   *)
-    echo "`basename ${0}`: usage: server [ start | stop | restart | attach ]"
+    echo "`basename ${0}`: usage: server [ start | stop | restart | build | attach ]"
     exit 1
     ;;
 esac
