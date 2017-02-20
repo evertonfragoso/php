@@ -11,7 +11,7 @@
 
 2. Clone this repository 
   ```bash
-  $ git clone https://github.com/evertonfragoso/php.git
+  $ git clone https://github.com/evertonfragoso/php-container.git
   ```
 
 3. Build the container
