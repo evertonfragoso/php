@@ -33,7 +33,9 @@ Available commands for `docker_container`:
   - `$ ./docker_container start`
   - `$ ./docker_container stop`
   - `$ ./docker_container restart`
+  - `$ ./docker_container attach`
 
+`docker_container attach` attaches to the container using `bash`
 
 ### Troubleshooting
 
