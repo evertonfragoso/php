@@ -1,6 +1,6 @@
 FROM php:7.1-apache
 
-RUN apt-get -y update && apt-get -y install git gzip libghc-postgresql-libpq-dev \
+RUN apt-get -y update && apt-get -y install git zip unzip libghc-postgresql-libpq-dev \
   && docker-php-ext-configure pgsql -with-pgsql=/usr/include/postgresql/ \
   && docker-php-ext-install pgsql
 
